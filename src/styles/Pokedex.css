@@ -33,7 +33,7 @@
   color: var(--color-black);
   cursor: pointer;
   font-family: "Press Start 2P", cursive;
-  font-size: 15px;
+  font-size: 8px;
   padding: 10px;
   transition: 300ms transform ease;
   margin: 20px;
