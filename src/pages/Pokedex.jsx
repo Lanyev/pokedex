@@ -1,28 +1,32 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import ListPokemons from "../components/ListPokemons";
+import "../styles/Pokedex.css";
 
 const Pokedex = () => {
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
   const nameTrainer = useSelector((state) => state.nameTrainer);
 
   useEffect(() => {
-    const URL = "https://pokeapi.co/api/v2/pokemon?limit=1154";
+    const URL = "https://pokeapi.co/api/v2/pokemon/?limit=44";
     axios
       .get(URL)
-      .then((response) => setPokemon(response.data))
+      .then((res) => setPokemons(res.data.results))
       .catch((error) => console.log(error));
   }, []);
 
   return (
     <main>
-      <header>
-        <h1>Pokedex</h1>
-        <p>
+      <header className="header__pokedex">
+        <h1 className="poke__name">Pokedex</h1>
+        <p className="poke__welcome">
           Welcome
-          <span>{nameTrainer}</span>, here is your pokedex.
+          <span className="poke__trainer"> {nameTrainer}</span>, here is your
+          pokedex.
         </p>
       </header>
+      <ListPokemons pokemons={pokemons} />
     </main>
   );
 };

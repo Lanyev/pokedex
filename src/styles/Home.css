@@ -64,7 +64,7 @@ body {
   animation: textShadow 1.6s infinite;
 }
 
-/* Flickering CRT Monitor http://aleclownes.com/2017/02/01/crt-display.html*/
+/* Flickering CRT Monitor, este efecto lo tome de esta pagina, http://aleclownes.com/2017/02/01/crt-display.html*/
 
 .home__name::before {
   content: " ";

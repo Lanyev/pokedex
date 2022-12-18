@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --color-black: #000;
+  --color-dark-gray: #333;
+  --color-red: #d93f3f;
+  --color-white: #fff;
+}
+
+.header__pokedex {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}

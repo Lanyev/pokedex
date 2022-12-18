@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.pokeCard {
+  text-align: center;
+  background-color: white;
+  border: 10px solid black;
+  width: min(300px, 100%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 300ms transform ease;
+}
+
+.pokeCard:hover {
+  transform: scale(1.05);
+}
+
+.pokeCard__header {
+  height: 170px;
+  background: linear-gradient(180deg, #000, #fff);
+}
+
+.pokeCard__content {
+  position: relative;
+}
+
+.pokeCard__img {
+  position: absolute;
+  width: 220px;
+  left: 20px;
+  padding: 0 20px;
+  top: 0;
+  transform: translateY(-94%);
+}
+
+.pokeCard__name {
+  font-family: "Press Start 2P", cursive;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+.pokeCard__types {
+  margin: 4px 0;
+  text-transform: capitalize;
+  font-family: "Press Start 2P", cursive;
+}
+
+.pokeCard__types-title {
+  font-family: "Press Start 2P", cursive;
+  color: #9f9f9f;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+  padding-bottom: 10px;
+}
+
+.pokeCard__stats {
+  font-family: "Press Start 2P", cursive;
+  display: grid;
+  grid-auto-rows: 60px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 10px;
+}
+
+.pokeCard__stat {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.pokeCard__stat-name {
+  margin: 0;
+  color: #9f9f9f;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.pokeCard__stat-value {
+  margin: 0;
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* Types Styles */
+
+.border-normal {
+  border: 10px solid #a8a878;
+}
+
+.border-fire {
+  border: 10px solid #f08030;
+}
+
+.border-water {
+  border: 10px solid #6890f0;
+}
+
+.border-electric {
+  border: 10px solid #f8d030;
+}
+
+.border-grass {
+  border: 10px solid #78c850;
+}
+
+.border-ice {
+  border: 10px solid #98d8d8;
+}
+
+.border-fighting {
+  border: 10px solid #c03028;
+}
+
+.border-poison {
+  border: 10px solid #a040a0;
+}
+
+.border-ground {
+  border: 10px solid #e0c068;
+}
+
+.border-flying {
+  border: 10px solid #a890f0;
+}
+
+.border-psychic {
+  border: 10px solid #f85888;
+}
+
+.border-bug {
+  border: 10px solid #a8b820;
+}
+
+.border-rock {
+  border: 10px solid #b8a038;
+}
+
+.border-ghost {
+  border: 10px solid #705898;
+}
+
+.border-dragon {
+  border: 10px solid #7038f8;
+}
+
+.border-dark {
+  border: 10px solid #705848;
+}
+
+.border-steel {
+  border: 10px solid #b8b8d0;
+}
+
+.border-fairy {
+  border: 10px solid #ee99ac;
+}
+
+.bg-lg-normal {
+  background: linear-gradient(180deg, #735259, #fff);
+}
+.bg-lg-fighting {
+  background: linear-gradient(180deg, #96402a, #fff);
+}
+.bg-lg-flying {
+  background: linear-gradient(180deg, #beb14c, #fff);
+}
+.bg-lg-poison {
+  background: linear-gradient(180deg, #5b3184, #fff);
+}
+.bg-lg-ground {
+  background: linear-gradient(180deg, #654008, #fff);
+}
+.bg-lg-rock {
+  background: linear-gradient(180deg, #7e7e7e, #fff);
+}
+.bg-lg-bug {
+  background: linear-gradient(180deg, #e52d2d, #fff);
+}
+.bg-lg-ghost {
+  background: linear-gradient(180deg, #323569, #fff);
+}
+.bg-lg-steel {
+  background: linear-gradient(180deg, #5e736c, #fff);
+}
+.bg-lg-fire {
+  background: linear-gradient(180deg, #f96d6f, #fff);
+}
+.bg-lg-water {
+  background: linear-gradient(180deg, #133258, #fff);
+}
+.bg-lg-grass {
+  background: linear-gradient(180deg, #7ec6c5, #fff);
+}
+.bg-lg-electric {
+  background: linear-gradient(180deg, #0c1395, #fff);
+}
+.bg-lg-psychic {
+  background: linear-gradient(180deg, #e52d2d, #fff);
+}
+.bg-lg-ice {
+  background: linear-gradient(180deg, #6fbedf, #fff);
+}
+.bg-lg-dragon {
+  background: linear-gradient(180deg, #478a93, #fff);
+}
+.bg-lg-dark {
+  background: linear-gradient(180deg, #030706, #fff);
+}
+.bg-lg-fairy {
+  background: linear-gradient(180deg, #971b45, #fff);
+}
+.bg-lg-unknown {
+  background: linear-gradient(180deg, #696767, #fff);
+}
+.bg-lg-shadow {
+  background: linear-gradient(180deg, #6c31a3, #fff);
+}
