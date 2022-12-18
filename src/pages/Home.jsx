@@ -13,7 +13,9 @@ const Home = () => {
       </div>
       <div className="home__name">
         <h2 className="home__subtitle">Hi, trainer!</h2>
-        <p className="home__text">Give me your name to start your journey!</p>
+        <p className="home__text">
+          Give me your name <span> to start your journey!</span>
+        </p>
         <FormHome />
         <Footer />
       </div>
