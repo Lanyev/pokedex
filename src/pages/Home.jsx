@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <main className="home">
       <div className="home__img-container">
-        <img className="home__imgP" src="public/images/p.png" alt="" />
-        <img className="home__imgO" src="public/images/pokeball.png" alt="" />
-        <img className="home__imgKedex" src="public/images/kedex.png" alt="" />
+        <img className="home__imgP" src="/images/p.png" alt="" />
+        <img className="home__imgO" src="/images/pokeball.png" alt="" />
+        <img className="home__imgKedex" src="/images/kedex.png" alt="" />
       </div>
       <div className="home__name">
         <h2 className="home__subtitle">Hi, trainer!</h2>
