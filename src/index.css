@@ -1,0 +1,41 @@
+/* Variables */
+:root {
+  --color-red: #d93f3f;
+  --color-green: #3fd93f;
+  --color-blue: #3f3fd9;
+  --color-yellow: #d9d93f;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #ccc;
+  --color-light-gray: #eee;
+  --color-dark-gray: #333;
+  --color-light-blue: #3f9fd9;
+  --color-dark-blue: #3f3fd9;
+  --color-light-green: #3fd93f;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
