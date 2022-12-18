@@ -15,3 +15,32 @@
   text-align: center;
   border-radius: 0 0 10px 10px;
 }
+
+.btn__section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.btn__prev,
+.btn__next,
+.btn__top {
+  width: 150px;
+  height: 40px;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-black);
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  padding: 10px;
+  transition: 300ms transform ease;
+  margin: 20px;
+}
+
+.btn__next:hover,
+.btn__prev:hover,
+.btn__top:hover {
+  transform: scale(1.05);
+}

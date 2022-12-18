@@ -25,11 +25,12 @@
 
 .pokeCard__img {
   position: absolute;
-  width: 220px;
-  left: 20px;
+  width: auto;
+  height: 150px;
+  left: 40px;
   padding: 0 20px;
   top: 0;
-  transform: translateY(-94%);
+  transform: translateY(-110%);
 }
 
 .pokeCard__name {
