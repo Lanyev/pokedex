@@ -8,14 +8,6 @@
   --color-yellow: #f5d000;
 }
 
-body {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  font-family: "Press Start 2P", cursive;
-  margin: 0;
-  padding: 0;
-}
-
 .pokemon {
   font-family: "Press Start 2P", cursive;
   display: flex;
