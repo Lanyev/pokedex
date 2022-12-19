@@ -30,17 +30,23 @@
   background-color: var(--color-white);
   border: none;
   border-radius: 10px;
-  color: var(--color-black);
+  color: var(--color-dark-gray);
   cursor: pointer;
   font-family: "Press Start 2P", cursive;
-  font-size: 8px;
+  font-size: 20px;
   padding: 10px;
   transition: 300ms transform ease;
   margin: 20px;
+  box-shadow: 8px 12px 25px -15px rgba(0, 0, 0, 0.75);
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn__next:hover,
 .btn__prev:hover,
 .btn__top:hover {
-  transform: scale(1.05);
+  background-color: var(--color-dark-gray);
+  color: var(--color-red);
+  cursor: pointer;
+  transform: scale(1.1);
+  animation: color-change 0.5s infinite alternate;
 }

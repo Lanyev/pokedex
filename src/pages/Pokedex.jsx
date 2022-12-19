@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 import ListPokemons from "../components/ListPokemons";
 import PokemonSearch from "../components/PokemonSearch";
 import "../styles/Pokedex.css";
+import "boxicons";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [errorMessage, setErrorMessage] = useState("");
   const updatePokemons = (pokemon) => {
     setPokemons([pokemon]);
   };
@@ -31,8 +33,12 @@ const Pokedex = () => {
       .then((res) => {
         setPokemons(res.data.results);
         setTotalPages(Math.ceil(res.data.count / 20));
+        setErrorMessage("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setErrorMessage("An error occurred while fetching the pokemons");
+        console.log(error);
+      });
   }, [currentPage]);
 
   return (
@@ -41,20 +47,31 @@ const Pokedex = () => {
         <h1 className="poke__name">Pokedex</h1>
         <p className="poke__welcome">
           Welcome
-          <span className="poke__trainer"> {nameTrainer}</span>, here is your
-          pokedex.
+          <span className="poke__trainer"> {nameTrainer}</span>, here are all
+          the pokemons you can catch!
         </p>
       </header>
       {/* <PokemonSearch updatePokemons={updatePokemons} /> */}
       <ListPokemons pokemons={pokemons} />
+      {errorMessage && <p>{errorMessage}</p>}
       <div className="btn__section">
-        <button className="btn__prev" onClick={handlePrevPage}>
-          Previous
+        {currentPage > 1 && (
+          <button className="btn__prev" onClick={handlePrevPage}>
+            <i className="bx bx-left-arrow-alt"></i>
+          </button>
+        )}
+        {currentPage === 1 && <p></p>}
+        <button className="btn__top">
+          <i className="bx bx-up-arrow-alt"></i>
         </button>
-        <button className="btn__top">To Top</button>
-        <button className="btn__next" onClick={handleNextPage}>
-          Next
-        </button>
+        {currentPage < totalPages && (
+          <button className="btn__next" onClick={handleNextPage}>
+            <i className="bx bx-right-arrow-alt"></i>
+          </button>
+        )}
+        {currentPage === totalPages && (
+          <p>You are on the last page, there is no next page</p>
+        )}
       </div>
     </main>
   );

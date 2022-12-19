@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --color-black: #000;
+  --color-dark-gray: #333;
+  --color-light-gray: #ccc;
+  --color-red: #d93f3f;
+  --color-white: #fff;
+  --color-yellow: #f5d000;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: "Press Start 2P", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.pokemon {
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.pokemonId {
+  position: relative;
+  width: min(1116px, 100%);
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.pokemonId__header {
+  /* position: absolute; */
+  height: 170px;
+  top: 0;
+  width: 100%;
+  background-color: blue;
+}
+
+.pokemonId__img {
+  position: absolute;
+  top: -30px;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pokemonId__id {
+  font-size: 25px;
+  margin: 15px 0 5px 0;
+}
+
+.pokemonId__name {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pokemonId__features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.pokemonId__feature {
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.pokemonId__feature-name {
+  margin: 10px 0 5px 0;
+}
+
+.pokemonId__feature-value {
+  margin: 4px 0 0 0;
+}
+
+.pokemonId__info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+  font-size: 10px;
+}
+
+.pokemonId__types {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 8px;
+}
+
+.pokemonId__type-title {
+  margin: 0;
+}
+
+.pokemonId__type-container {
+  display: flex;
+  gap: 5px;
+}
+
+.pokemonId__type-value {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.pokemonId__info-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 8px;
+}
+
+.pokemonId__skill-title {
+  margin: 0;
+}
+
+.pokemonId__skill-container {
+  display: flex;
+  gap: 5px;
+}
+
+.pokemonId__skill-value {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.pokemonId__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pokemonId__stats-title {
+  margin: 0;
+}
+
+.pokemonId__stats-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.pokemonId__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pokemonId_stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemonId__stat-name {
+  text-transform: capitalize;
+  text-align: left;
+  margin: 0;
+}
+
+.pokemonId__stat-value {
+  margin: 0;
+}
+
+.pokemonId__stat-bar {
+  height: 10px;
+  background-color: var(--color-light-gray);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.pokemonId__stat-barProgress {
+  height: 100%;
+  background-color: var(--color-yellow);
+  border-radius: 5px;
+}
