@@ -5,6 +5,7 @@ import Pokedex from "./pages/Pokedex";
 import Pokemon from "./pages/Pokemon";
 import RouteProtected from "./components/RouteProtected";
 import HomeProtected from "./components/HomeProtected";
+import { useSelector } from "react-redux";
 
 function App() {
   return (

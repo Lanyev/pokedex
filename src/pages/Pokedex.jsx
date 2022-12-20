@@ -11,9 +11,12 @@ const Pokedex = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
-  const updatePokemons = (pokemon) => {
-    setPokemons([pokemon]);
-  };
+  const [types, setTypes] = useState([]);
+  const [name, setName] = useState("");
+  const [namePokemon, setNamePokemon] = useState("");
+  const [pokemonFilter, setPokemonsFilter] = useState([]);
+  const [resultsPerPage, setResultsPerPage] = useState(20);
+
   const nameTrainer = useSelector((state) => state.nameTrainer);
 
   const handleNextPage = () => {
@@ -24,22 +27,73 @@ const Pokedex = () => {
     setCurrentPage(currentPage - 1);
   };
 
-  useEffect(() => {
-    const URL = `https://pokeapi.co/api/v2/pokemon/?offset=${
-      (currentPage - 1) * 20
-    }&limit=20`;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const URL = `https://pokeapi.co/api/v2/pokemon/${name}`;
     axios
       .get(URL)
       .then((res) => {
         setPokemons(res.data.results);
-        setTotalPages(Math.ceil(res.data.count / 20));
         setErrorMessage("");
       })
       .catch((error) => {
         setErrorMessage("An error occurred while fetching the pokemons");
         console.log(error);
       });
-  }, [currentPage]);
+  };
+
+  useEffect(() => {
+    const newPokemons = pokemons.filter((pokemon) =>
+      pokemon.name.includes(namePokemon)
+    );
+    setPokemonsFilter(newPokemons);
+  }, [namePokemon]);
+
+  useEffect(() => {
+    const URL = `https://pokeapi.co/api/v2/pokemon/?offset=${
+      (currentPage - 1) * resultsPerPage
+    }&limit=${resultsPerPage}`;
+    axios
+      .get(URL)
+      .then((res) => {
+        setPokemons(res.data.results);
+        setTotalPages(Math.ceil(res.data.count / resultsPerPage));
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        setErrorMessage("An error occurred while fetching the pokemons");
+        console.log(error);
+      });
+  }, [currentPage, resultsPerPage]);
+
+  //useEffect para traer los pokemons buscados por nombre
+  useEffect(() => {
+    const URL = `https://pokeapi.co/api/v2/pokemon/${name}`;
+    axios
+      .get(URL)
+      .then((res) => {
+        setPokemons(res.data.results);
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        setErrorMessage("An error occurred while fetching the pokemons");
+        console.log(error);
+      });
+  }, [name]);
+
+  useEffect(() => {
+    const URL = `https://pokeapi.co/api/v2/type`;
+    axios
+      .get(URL)
+      .then((res) => {
+        setTypes(res.data.results);
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        setErrorMessage("An error occurred while fetching the pokemons");
+        console.log(error);
+      });
+  }, []);
 
   return (
     <main>
@@ -50,27 +104,32 @@ const Pokedex = () => {
           <span className="poke__trainer"> {nameTrainer}</span>, here are all
           the pokemons you can catch!
         </p>
+        <form onSubmit={handleSubmit} className="pokedex__form">
+          <div className="pokedex__search">
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <button className="btn__search">
+              <i className="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
       </header>
-      {/* <PokemonSearch updatePokemons={updatePokemons} /> */}
+
       <ListPokemons pokemons={pokemons} />
       {errorMessage && <p>{errorMessage}</p>}
       <div className="btn__section">
         {currentPage > 1 && (
           <button className="btn__prev" onClick={handlePrevPage}>
-            <i className="bx bx-left-arrow-alt"></i>
+            Prev
           </button>
         )}
-        {currentPage === 1 && <p></p>}
-        <button className="btn__top">
-          <i className="bx bx-up-arrow-alt"></i>
-        </button>
         {currentPage < totalPages && (
           <button className="btn__next" onClick={handleNextPage}>
-            <i className="bx bx-right-arrow-alt"></i>
+            Next
           </button>
-        )}
-        {currentPage === totalPages && (
-          <p>You are on the last page, there is no next page</p>
         )}
       </div>
     </main>

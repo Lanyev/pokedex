@@ -16,7 +16,7 @@
 
 .pokeCard__header {
   height: 170px;
-  background: linear-gradient(180deg, #000, #fff);
+  /* background: linear-gradient(180deg, #000, #fff); */
 }
 
 .pokeCard__content {

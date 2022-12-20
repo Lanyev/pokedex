@@ -32,8 +32,8 @@ const PokemonCard = ({ pokemon }) => {
       <section className="pokeCard__content">
         <img
           className="pokeCard__img"
-          src={dataPokemon?.sprites.other["official-artwork"].front_default}
-          alt="Pokemon Image"
+          src={dataPokemon?.sprites.front_default}
+          alt={pokemon.name}
         />
         <h3 className="pokeCard__name">{pokemon.name}</h3>
         <p className="pokeCard__types">{types}</p>

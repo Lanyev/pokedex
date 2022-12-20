@@ -17,10 +17,14 @@ const Pokemon = () => {
   return (
     <main className="pokemon">
       <section className="pokemonId">
-        <section className="pokemonId__header"></section>
+        <section
+          className={`pokemonId__header bg-lg-${dataPokemon?.types[0].type.name}`}
+        ></section>
         <img
           className="pokemonId__img"
-          src={dataPokemon?.sprites.other["official-artwork"].front_default}
+          src={
+            dataPokemon?.sprites.other["official-artwork"].front_default || ""
+          }
           alt=""
         />
         <h3 className="pokemonId__id"># {dataPokemon?.id}</h3>
@@ -40,7 +44,10 @@ const Pokemon = () => {
             <h4 className="pokemonId__type-title">Type</h4>
             <div className="pokemonId__type-container">
               {dataPokemon?.types.map((type) => (
-                <p className="pokemonId__type-value" key={type.type.name}>
+                <p
+                  className={`pokemonId__type-value bg-${type.type.name}`}
+                  key={type.type.name}
+                >
                   {type.type.name}
                 </p>
               ))}
