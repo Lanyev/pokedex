@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ListPokemons from "../components/ListPokemons";
 import PokemonSearch from "../components/PokemonSearch";
 import "../styles/Pokedex.css";
-import "boxicons";
+import Pagination from "../components/Pagination";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -26,6 +26,15 @@ const Pokedex = () => {
   const handlePrevPage = () => {
     setCurrentPage(currentPage - 1);
   };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -120,14 +129,28 @@ const Pokedex = () => {
 
       <ListPokemons pokemons={pokemons} />
       {errorMessage && <p>{errorMessage}</p>}
-      <div className="btn__section">
+      <Pagination
+        resultsPerPage={resultsPerPage}
+        totalPokemons={totalPages}
+        paginate={handlePageChange}
+      />
+      <div className="pagination__container">
         {currentPage > 1 && (
-          <button className="btn__prev" onClick={handlePrevPage}>
-            Prev
+          <button className="pagination__button" onClick={handlePrevPage}>
+            Previous
           </button>
         )}
+        {pageNumbers.map((number) => (
+          <button
+            key={number}
+            className="pagination__button"
+            onClick={() => handlePageChange(number)}
+          >
+            {number}
+          </button>
+        ))}
         {currentPage < totalPages && (
-          <button className="btn__next" onClick={handleNextPage}>
+          <button className="pagination__button" onClick={handleNextPage}>
             Next
           </button>
         )}

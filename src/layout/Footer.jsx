@@ -6,6 +6,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__img">
         <img className="pikachu" src="/images/pika.gif" alt="" />
+        <img
+          className="gif1"
+          src="public/images/tumblr_msokfsdfR81scncwdo1_500.gif"
+          alt=""
+        />
       </div>
       <div className="footer__black"></div>
       <div className="footer__white"></div>
