@@ -16,6 +16,19 @@
   border-radius: 0 0 10px 10px;
 }
 
+.header__pokedex-img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  display: none;
+}
+
+.header__pokedex-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .btn__section {
   display: flex;
   justify-content: space-between;
@@ -49,4 +62,10 @@
   cursor: pointer;
   transform: scale(1.1);
   animation: color-change 0.5s infinite alternate;
+}
+
+.pokedex__filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }

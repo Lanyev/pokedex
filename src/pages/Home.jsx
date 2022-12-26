@@ -4,10 +4,8 @@ import Footer from "../layout/Footer";
 import "../styles/Home.css";
 
 const Home = () => {
-  // Inicializa el estado showAnimation en false para que no se vea la animación
   const [showAnimation, setShowAnimation] = useState(false);
 
-  // Agrega un manejador de evento al botón para cambiar el estado showAnimation
   const handleToggleAnimation = () => {
     setShowAnimation(!showAnimation);
   };
