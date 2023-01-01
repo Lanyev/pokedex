@@ -11,6 +11,11 @@ const Pokedex = () => {
   const [name, setName] = useState("");
   const [pokemonFilter, setPokemonsFilter] = useState([]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.namePokemon.value;
+  };
+
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
@@ -26,10 +31,20 @@ const Pokedex = () => {
     fetchPokemons();
   }, [name]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setName(e.target.value);
-  };
+  useEffect(() => {
+    const URL = "https://pokeapi.co/api/v2/type";
+    axios
+      .get(URL)
+      .then((res) => setTypes(res.data.results))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    const newPokemons = pokemons.filter((pokemon) =>
+      pokemon.name.includes(name)
+    );
+    setPokemonsFilter(newPokemons);
+  }, [name, pokemons]);
 
   return (
     <div className="pokedex">

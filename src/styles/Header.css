@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --color-black: #000;
+  --color-dark-gray: #333;
+  --color-red: #d93f3f;
+  --color-dark-red: #a32c2c;
+  --color-white: #fff;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+}
+
+.pokedex__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--color-dark-red);
+  color: var(--color-white);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 10px var(--color-dark-gray);
+}
+
+.pokedex__header-title {
+  margin: 0 4px 4px 0;
+  font-size: 24px;
+}
+
+.pokedex__header-nameTrainer {
+  margin: 0 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.pokedex__header-phrase {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.pokedex__header-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.showFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 30px;
+  right: 0;
+  margin: 10px;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: var(--color-dark-red);
+  box-shadow: inset 0 0 10px var(--color-dark-gray);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal__input {
+  padding: 4px;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 4px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100px;
+  z-index: 2;
+}
+.modal__input:focus {
+  outline: none;
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  z-index: 2;
+}
+
+.modal__searchBtn {
+  padding: 4px;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 4px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  z-index: 2;
+}
+.modal__searchBtn:hover {
+  background-color: var(--color-red);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Media Queries */
+
+@media (max-width: 400px) {
+  .pokedex__header-title {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  .pokedex__header-nameTrainer {
+    font-size: 12px;
+  }
+  .pokedex__header-phrase {
+    display: none;
+  }
+}
+
+@media (min-width: 400px) {
+  .pokedex__header-input {
+    width: 150px;
+    margin: 10px;
+  }
+}
